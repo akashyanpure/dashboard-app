@@ -5,6 +5,7 @@ import { Header } from './components/Header'
 import { Users } from './components/Users'
 import { DisplayBoard } from './components/DisplayBoard'
 import CreateUser from './components/CreateUser'
+import Card from './components/card'
 import { getAllUsers, createUser } from './services/UserService'
 
 function App() {
@@ -66,6 +67,13 @@ function App() {
                     >
                   </CreateUser>
               </div>
+              <Card
+                title="Users"
+                description={fetchAllUsers}
+                onDelete={fetchAllUsers}
+                onEdit={fetchAllUsers}
+              >
+              </Card>
               <div className="col-md-4">
                   <DisplayBoard
                     numberOfUsers={numberOfUsers}
