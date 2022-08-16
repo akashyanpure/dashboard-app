@@ -36,8 +36,14 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, '../my-app/build')));
 
 app.get('/api/users', (req, res) => {
-  console.log('api/users called!')
-  res.json(users);
+  console.log('/datasets/metadata called!');
+  pool.query('SELECT * FROM public.datasets_metadata', (error, results) => {
+    if (error) {
+      throw error
+    }
+    console.log(results.rows)
+    res.json(results.rows)
+  })
 });
 
 app.post('/api/user', (req, res) => {

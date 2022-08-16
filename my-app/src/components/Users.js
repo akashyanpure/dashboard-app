@@ -7,6 +7,7 @@ import { faEdit } from '@fortawesome/free-solid-svg-icons';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons'
 
 export const Users = ({users}) => {
+    console.log("user",users)
     users = [{"firstName":"first1","lastName":"last1"},{"firstName":"first2","lastName":"last2"},{"firstName":"first3","lastName":"last3"},
     {"firstName":"first1","lastName":"last1"},{"firstName":"first2","lastName":"last2"},{"firstName":"first3","lastName":"last3"},
     {"firstName":"first1","lastName":"last1"},{"firstName":"first2","lastName":"last2"},{"firstName":"first3","lastName":"last3"}]

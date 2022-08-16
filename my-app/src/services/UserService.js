@@ -2,7 +2,7 @@
 export async function getAllUsers() {
 
     try{
-        const response = await fetch('/api/users');
+        const response = await fetch('/datasets/metadata');
         return await response.json();
     }catch(error) {
         return [];
