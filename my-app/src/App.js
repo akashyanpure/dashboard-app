@@ -57,7 +57,7 @@ function App() {
     return (
         <div className="App">
           <Header></Header>
-          <div className="container mrgnbtm">
+          {/* <div className="container mrgnbtm">
             <div className="row">
               <div className="col-md-8">
                   <CreateUser 
@@ -74,15 +74,15 @@ function App() {
                 onEdit={fetchAllUsers}
               >
               </Card>
-              {/* <div className="col-md-2">
+              <div className="col-md-2">
                   <DisplayBoard
                     numberOfUsers={numberOfUsers}
                     getAllUsers={fetchAllUsers}
                   >
                   </DisplayBoard>
-              </div> */}
+              </div>
             </div>
-          </div>
+          </div> */}
           <div className="row mrgnbtm">
             <Users users={users}></Users>
           </div>
