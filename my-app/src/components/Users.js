@@ -1,40 +1,64 @@
 import React from 'react'
+import './Card.css';
+import './AnimateCard.jsx'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
+import { faEdit } from '@fortawesome/free-solid-svg-icons';
+import { faCoffee } from '@fortawesome/free-solid-svg-icons'
 
 export const Users = ({users}) => {
-
-    console.log('users length:::', users.length)
+    users = [{"firstName":"first1","lastName":"last1"},{"firstName":"first2","lastName":"last2"},{"firstName":"first3","lastName":"last3"},
+    {"firstName":"first1","lastName":"last1"},{"firstName":"first2","lastName":"last2"},{"firstName":"first3","lastName":"last3"},
+    {"firstName":"first1","lastName":"last1"},{"firstName":"first2","lastName":"last2"},{"firstName":"first3","lastName":"last3"}]
+    // console.log('users length:::', users)
     if (users.length === 0) return null
+    var UserRow = []
+    const Row = (user,index) => {
+        return (
+            <div class="col-md-4 col-sm-6 col-xs-10">
+            <article class="material-card Red">
+                <h2>
+                    <span>{user.firstName}</span>
+                    <strong>
+                        <i class="fa fa-fw fa-star"></i>
+                        {user.lastName}
+                    </strong>
+                </h2>
+                <div class="mc-content">
+                    <div class="img-container">
+                        <img class="img-responsive img-thumbnail" src="https://material-cards.s3-eu-west-1.amazonaws.com/thumb-christopher-walken.jpg"/>
+                    </div>
+                    <div class="mc-description">
+                        He has appeared in more than 100 films and television shows, including The Deer Hunter, Annie Hall, The Prophecy trilogy, The Dogs of War ...
+                    </div>
+                </div>
+                <a class="mc-btn-action">
+                    <i class="fa fa-bars"></i>
+                </a>
+                <div class="mc-footer">
+                    <h4>
+                        Social
+                    </h4>
+                    <a class="fa fa-fw fa-facebook"></a>
+                    <a class="fa fa-fw fa-twitter"></a>
+                    <a class="fa fa-fw fa-linkedin"></a>
+                    <a class="fa fa-fw fa-google-plus"></a>
+                </div>
+            </article>
+        </div>
+        )
+}
+                                   
 
-    const UserRow = (user,index) => {
 
-        return(
-              <tr key = {index} className={index%2 === 0?'odd':'even'}>
-                  <td>{index + 1}</td>
-                  <td>{user.firstName}</td>
-                  <td>{user.lastName}</td>
-                  <td>{user.email}</td>
-              </tr>
-          )
-    }
-
-    const userTable = users.map((user,index) => UserRow(user,index))
+    const userTable = users.map((user,index) => Row(user,index))
+    console.log('userTable', userTable)
 
     return(
-        <div className="container">
-            <h2>Users</h2>
-            <table className="table table-bordered">
-                <thead>
-                <tr>
-                    <th>User Id</th>
-                    <th>Firstname</th>
-                    <th>Lastname</th>
-                    <th>Email</th>
-                </tr>
-                </thead>
-                <tbody>
-                    {userTable}
-                </tbody>
-            </table>
+        <section class="container">
+        <div class="row">
+            {userTable}
         </div>
+    </section>
     )
 }

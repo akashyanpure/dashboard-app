@@ -74,18 +74,22 @@ function App() {
                 onEdit={fetchAllUsers}
               >
               </Card>
-              <div className="col-md-4">
+              {/* <div className="col-md-2">
                   <DisplayBoard
                     numberOfUsers={numberOfUsers}
                     getAllUsers={fetchAllUsers}
                   >
                   </DisplayBoard>
-              </div>
+              </div> */}
             </div>
           </div>
           <div className="row mrgnbtm">
             <Users users={users}></Users>
           </div>
+          {/* <div>
+          <button onClick={onAddBtnClick}>Add input</button>
+          {inputList}
+        </div> */}
         </div>
     );
 }
