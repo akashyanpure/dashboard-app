@@ -4,6 +4,15 @@ const app = express(),
       bodyParser = require("body-parser");
       port = 80;
 
+const Pool = require('pg').Pool
+const pool = new Pool({
+        user: 'postgres',
+        host: 'test-db-postgres.c8cxqgsirbs0.eu-west-2.rds.amazonaws.com',
+        database: 'postgres',
+        password: 'mystrongpassword',
+        port: 5432,
+      })
+
 // place holder for the data
 const users = [
   {
@@ -36,6 +45,17 @@ app.post('/api/user', (req, res) => {
   console.log('Adding user:::::', user);
   users.push(user);
   res.json("user addedd");
+});
+
+app.get('/datasets/metadata', (req, res) => {
+  console.log('/datasets/metadata called!');
+  pool.query('SELECT * FROM public.datasets_metadata', (error, results) => {
+    if (error) {
+      throw error
+    }
+    console.log(results.rows)
+    res.json(results.rows)
+  })
 });
 
 app.get('/', (req,res) => {
