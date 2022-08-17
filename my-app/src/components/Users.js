@@ -27,7 +27,9 @@ export const Users = ({users}) => {
                 </h2>
                 <div class="mc-content">
                     <div class="img-container">
+                    <a href={user.dashboard_url} rel="noreferrer noopener">
                         <img class="img-responsive img-thumbnail" src={user.image_url}/>
+                    </a>
                     </div>
                     <div class="mc-description">
                         He has appeared in more than 100 films and television shows, including The Deer Hunter, Annie Hall, The Prophecy trilogy, The Dogs of War ...
