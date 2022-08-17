@@ -8,9 +8,9 @@ import { faCoffee } from '@fortawesome/free-solid-svg-icons'
 
 export const Users = ({users}) => {
     console.log("user",users)
-    users = [{"firstName":"first1","lastName":"last1"},{"firstName":"first2","lastName":"last2"},{"firstName":"first3","lastName":"last3"},
-    {"firstName":"first1","lastName":"last1"},{"firstName":"first2","lastName":"last2"},{"firstName":"first3","lastName":"last3"},
-    {"firstName":"first1","lastName":"last1"},{"firstName":"first2","lastName":"last2"},{"firstName":"first3","lastName":"last3"}]
+    // users = [{"firstName":"first1","lastName":"last1"},{"firstName":"first2","lastName":"last2"},{"firstName":"first3","lastName":"last3"},
+    // {"firstName":"first1","lastName":"last1"},{"firstName":"first2","lastName":"last2"},{"firstName":"first3","lastName":"last3"},
+    // {"firstName":"first1","lastName":"last1"},{"firstName":"first2","lastName":"last2"},{"firstName":"first3","lastName":"last3"}]
     // console.log('users length:::', users)
     if (users.length === 0) return null
     var UserRow = []
@@ -19,15 +19,15 @@ export const Users = ({users}) => {
             <div class="col-md-4 col-sm-6 col-xs-10">
             <article class="material-card Red">
                 <h2>
-                    <span>{user.firstName}</span>
+                    <span>{user.title}</span>
                     <strong>
                         <i class="fa fa-fw fa-star"></i>
-                        {user.lastName}
+                        {user.description}
                     </strong>
                 </h2>
                 <div class="mc-content">
                     <div class="img-container">
-                        <img class="img-responsive img-thumbnail" src="https://material-cards.s3-eu-west-1.amazonaws.com/thumb-christopher-walken.jpg"/>
+                        <img class="img-responsive img-thumbnail" src={user.image_url}/>
                     </div>
                     <div class="mc-description">
                         He has appeared in more than 100 films and television shows, including The Deer Hunter, Annie Hall, The Prophecy trilogy, The Dogs of War ...
