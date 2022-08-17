@@ -19,11 +19,11 @@ export const Users = ({users}) => {
             <div class="col-md-4 col-sm-6 col-xs-10">
             <article class="material-card Red">
                 <h2>
-                    <span>{user.title}</span>
-                    <strong>
-                        <i class="fa fa-fw fa-star"></i>
-                        {user.description}
-                    </strong>
+                    <span><i class="fa fa-fw fa-star"></i>{user.title}</span>
+                    <div style={{ textAlign: 'justify', padding: '10px' }}>
+                    <h6>{user.description}</h6>
+                    </div>
+                        
                 </h2>
                 <div class="mc-content">
                     <div class="img-container">
